@@ -2,7 +2,7 @@ import {test, expect} from '@playwright/test'
 test.beforeEach(async({page})=>{
     await page.goto('https://playground.bondaracademy.com/')
 })
-test.describe.only('Form Layouts Page',()=>{
+test.describe('Form Layouts Page',()=>{
     test.beforeEach(async({page})=>{
         await page.getByText('Forms').click()
         await page.getByText('Form Layouts').click()
