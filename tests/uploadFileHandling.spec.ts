@@ -11,7 +11,7 @@ test('File Upload Handling - 1', async ({ page }) => {
   await page.close()
 });
 
-test.only('File Upload Handling - 2', async ({ page }) => {
+test('File Upload Handling - 2', async ({ page }) => {
   await page.goto('https://blueimp.github.io/jQuery-File-Upload/');
   await page.setInputFiles('input[name="files[]"]', ['tests/filestoUpload/test_1.png', 'tests/filestoUpload/test_2.png']);
   await page.waitForTimeout(5000);

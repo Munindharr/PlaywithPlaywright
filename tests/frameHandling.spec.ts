@@ -22,7 +22,7 @@ test('Frame Handling using page.FrameLocator()', async ({page}) => {
     const textInput = frame2.locator('input[name="mytext1"]');
     await textInput.fill('Play wright - Frame Handling using frame Locator');
 });
-test.only('Nested Frame Handling', async ({page}) => {
+test('Nested Frame Handling', async ({page}) => {
     await page.goto('https://ui.vision/demo/webtest/frames/');
     const frame3 = page.frame({url: 'https://ui.vision/demo/webtest/frames/frame_3'});
 

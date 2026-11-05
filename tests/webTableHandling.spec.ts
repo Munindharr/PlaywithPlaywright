@@ -30,7 +30,7 @@ test('Selecting the single check box in Web Table', async ({page}) => {
     await page.pause();
     await page.close();
 })
-test.only('Selecting Multiple Check Boxes in Web Table using function', async ({page}) => {
+test('Selecting Multiple Check Boxes in Web Table using function', async ({page}) => {
     await page.goto('https://testautomationpractice.blogspot.com/');
     const table = page.locator('table[id="productTable"]');
     const columns = await table.locator('thead tr th').count();

@@ -23,7 +23,7 @@ test('Printing all items from page 1 from pagination', async ({page}) => {
     }
     await page.close()
 })
-test.only('Printing all items from all pages from pagination', async ({page}) => {
+test('Printing all items from all pages from pagination', async ({page}) => {
     await page.goto('https://testautomationpractice.blogspot.com/');
 
     await page.goto('https://testautomationpractice.blogspot.com/');

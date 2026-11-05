@@ -47,7 +47,7 @@ await page.goto("https://the-internet.herokuapp.com/javascript_alerts");
     await page.locator('button[onclick="jsPrompt()"]').click();
     await page.close()
 });
-test.only("PromptAlert with Text Input - Cancel button ", async ({ page }) => {
+test("PromptAlert with Text Input - Cancel button ", async ({ page }) => {
 await page.goto("https://the-internet.herokuapp.com/javascript_alerts");
         page.on("dialog", async (alert) => {
         const alertText = alert.message();
