@@ -5,7 +5,6 @@ test('Drag and Drop Handling #1', async ({page}) => {
     await page.getByText('Drag & Drop').click();
 
     await page.getByText(' Clean my room ').dragTo(page.locator('#drop-list'));
-    await page.pause();
     await page.close()
 })
 test('Drag and Drop Handling #2', async ({page}) => {
