@@ -8,5 +8,4 @@ test('this is a first test',async({page})=>{
 })
 test('this is a first test to date picker',async({page})=>{
     await page.getByText('Datepicker').click();
-    await page.pause()
 })

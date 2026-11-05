@@ -4,11 +4,9 @@ test("Single static dropdown Handling", async ({ page }) => {
     await page.selectOption("#Skills", {
         value: "Android"
     })
-        await page.pause()
         await page.selectOption("#Skills", {
         value: "Art Design"
     })
-        await page.pause()
         await page.selectOption("#Skills", {
         index: 7
     })
@@ -22,7 +20,6 @@ test("Multi static dropdown Handling", async ({ page }) => {
         {label: "Florida"},
         {index: 3}
     ])
-    await page.pause()
     await page.close()
 })
 test("Searchable dynamic dropdown", async ({ page }) => {

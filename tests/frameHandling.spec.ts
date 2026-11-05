@@ -12,7 +12,6 @@ test('Frame Handling using page.Frame()', async ({page}) => {
     }
     const textInput = frame1.locator('input[name="mytext1"]');
     await textInput.fill('Play wright - Frame Handling using frame');
-    await page.pause();
     await expect(textInput).toHaveValue('Play wright - Frame Handling using frame');
 });
 test('Frame Handling using page.FrameLocator()', async ({page}) => {

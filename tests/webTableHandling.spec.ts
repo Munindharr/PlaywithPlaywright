@@ -27,7 +27,6 @@ test('Selecting the single check box in Web Table', async ({page}) => {
         hasText: 'Smartwatch'
     })
     await matchingRow.locator('input').check();
-    await page.pause();
     await page.close();
 })
 test('Selecting Multiple Check Boxes in Web Table using function', async ({page}) => {
@@ -39,7 +38,6 @@ test('Selecting Multiple Check Boxes in Web Table using function', async ({page}
     await selectCheckBoxesInTable(rows, page, 'Smartphone');
     await selectCheckBoxesInTable(rows, page, 'Laptop');
     
-    await page.pause();
     await page.close();
 })
 async function selectCheckBoxesInTable(rows: Locator, page: Page, productName: string) {
