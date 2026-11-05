@@ -9,5 +9,4 @@ test('test', async ({ page }) => {
   await page.locator('.custom-checkbox').first().click();
   await page.locator('form').filter({ hasText: 'Remember meSubmit' }).getByLabel('Remember me').check();
   await page.locator('form').filter({ hasText: 'Remember meSubmit' }).getByRole('button').click();
-  await page.pause();
 });
