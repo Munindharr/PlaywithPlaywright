@@ -36,22 +36,36 @@ await page.goto("https://the-internet.herokuapp.com/javascript_alerts");
     await page.locator('button[onclick="jsConfirm()"]').click();
     await page.close()
 });
-test("PromptAlert with Text Input - Ok button ", async ({ page }) => {
-await page.goto("https://the-internet.herokuapp.com/javascript_alerts");
-        page.on("dialog", async (alert) => {
-        const alertText = alert.message();
-        expect(alertText).toEqual("I am a JS Prompt");
-        await alert.accept("playwright");
-        await expect(page.locator("#result")).toHaveText("You entered: playwright");
+
+test("PromptAlert with Text Input - Ok button - new change with chat gpt", async ({ page }) => {
+
+    await page.goto("https://the-internet.herokuapp.com/javascript_alerts");
+
+    // Handle the next dialog
+    page.once("dialog", async (dialog) => {
+
+        // Verify alert message
+        expect(dialog.message()).toBe("I am a JS prompt");
+
+        // Enter text and click OK
+        await dialog.accept("playwright");
+
     });
+
+    // Trigger the prompt
     await page.locator('button[onclick="jsPrompt()"]').click();
-    await page.close()
+
+    // Verify result
+    await expect(page.locator("#result"))
+        .toHaveText("You entered: playwright");
+
 });
+
 test("PromptAlert with Text Input - Cancel button ", async ({ page }) => {
 await page.goto("https://the-internet.herokuapp.com/javascript_alerts");
         page.on("dialog", async (alert) => {
         const alertText = alert.message();
-        expect(alertText).toEqual("I am a JS Prompt");
+        expect(alertText).toEqual("I am a JS prompt");
         await alert.dismiss();
         await expect(page.locator("#result")).toHaveText("You entered: null");
     });

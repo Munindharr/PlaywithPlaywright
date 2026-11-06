@@ -1,12 +1,16 @@
-import {test, expect} from '@playwright/test';
-test('Drag and Drop Handling #1', async ({page}) => {
-    await page.goto('https://playground.bondaracademy.com/pages/extra-components/drag-drop');
-    await page.getByText('Extra Components').click();
-    await page.getByText('Drag & Drop').click();
+import { test, expect } from '@playwright/test';
 
-    await page.getByText(' Clean my room ').dragTo(page.locator('#drop-list'));
-    await page.close()
-})
+test('Drag and Drop Handling #1', async ({ page }) => {
+
+    await page.goto('https://playground.bondaracademy.com/pages/extra-components/drag-drop');
+
+    await expect(page.getByText('Clean my room')).toBeVisible();
+
+    const source = page.getByText('Clean my room');
+    const target = page.locator('#drop-list');
+
+    await source.dragTo(target);
+});
 test('Drag and Drop Handling #2', async ({page}) => {
     await page.goto('https://playground.bondaracademy.com/pages/extra-components/drag-drop');
     await page.getByText('Extra Components').click();

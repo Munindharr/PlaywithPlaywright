@@ -14,7 +14,7 @@ test("Single static dropdown Handling", async ({ page }) => {
 })
 
 test("Multi static dropdown Handling", async ({ page }) => {
-    await page.goto("https://demo.automationtesting.in/Register.html");
+    await page.goto("https://www.testmuai.com/selenium-playground/select-dropdown-demo/");
     await page.selectOption("#multi-select", [
         {value: "California"},
         {label: "Florida"},

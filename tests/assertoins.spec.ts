@@ -19,6 +19,6 @@ test('Assertions demo',async({page})=>{
     await expect(basicFormSelection).toHaveText('Submit')//locator is getst checked -  hover the mouse on this method to check it is generic assertion
 
     //soft assertoins
-    await expect.soft(basicFormSelection).toHaveText('Submitt')// allows to continue your execution even it fails
+    await expect.soft(basicFormSelection).toHaveText('Submit')// allows to continue your execution even it fails
     await basicFormSelection.click();
 })
