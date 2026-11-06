@@ -17,7 +17,7 @@ test('Single Window Handling', async ({page}) => {
 
     const [newWindow] = await Promise.all([
         page.waitForEvent('popup'),
-        await page.click('button[onclick="newwindow()"]') 
+        page.locator('button[onclick="newwindow()"]').click()
     ])
     await newWindow.waitForLoadState();
     await newWindow.locator('.DocSearch-Button-Placeholder').click();
