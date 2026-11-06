@@ -8,7 +8,7 @@ test('Single Tab Handling', async ({page}) => {
     await newTabButton.waitForLoadState();
     await newTabButton.locator('.DocSearch-Button-Placeholder').click();
     await newTabButton.locator('#docsearch-input').fill('Locator Strategies' );
-    await newTabButton.waitForTimeout(5000);
+    //await newTabButton.waitForTimeout(5000);
     await newTabButton.close();
 })
 test('Single Window Handling', async ({page}) => {
@@ -22,7 +22,7 @@ test('Single Window Handling', async ({page}) => {
     await newWindow.waitForLoadState();
     await newWindow.locator('.DocSearch-Button-Placeholder').click();
     await newWindow.locator('#docsearch-input').fill('Locator Strategies' );
-    await newWindow.waitForTimeout(5000);
+    //await newWindow.waitForTimeout(5000);
     await newWindow.close();
 })
 test('Multiple Tab Handling', async ({page}) => {
@@ -41,7 +41,7 @@ test('Multiple Tab Handling', async ({page}) => {
     
     await pages[2].locator('.DocSearch-Button-Placeholder').click();
     await pages[2].locator('#docsearch-input').fill('Locator Strategies' );
-    await pages[2].waitForTimeout(5000);
+    //await pages[2].waitForTimeout(5000);
     await pages[2].close();
 
 })
