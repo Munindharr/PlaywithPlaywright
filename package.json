@@ -14,6 +14,7 @@
   "license": "ISC",
   "author": "",
   "type": "commonjs",
+
   "main": "index.js",
   "directories": {
     "test": "tests"

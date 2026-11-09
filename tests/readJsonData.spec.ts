@@ -1,8 +1,8 @@
 import  {test, expect} from '@playwright/test'
-import loginData from './testData/credentialsForLogin.json'
+import credentials  from './testData/credentialsForLogin.json'
 
 test('Read data from JSON file for valid and Invalid credentials',async({page})=>{
-    for (const data of loginData) {
+    for (const data of credentials) {
     await page.goto('https://opensource-demo.orangehrmlive.com/web/index.php/auth/login')
     await page.getByPlaceholder('Username').fill(data.username)
     await page.getByPlaceholder('Password').fill(data.password)
