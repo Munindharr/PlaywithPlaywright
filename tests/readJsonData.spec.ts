@@ -14,6 +14,7 @@ test('Read data from JSON file for valid and Invalid credentials',async({page})=
             await page.locator('.oxd-userdropdown-tab').click()
             await page.getByRole('menuitem', { name: 'Logout' }).click()
     }else {
+        await page.waitForTimeout(1000) // Wait for the error message to appear
         await expect(page.getByText('Invalid credentials')).toBeVisible()
         console.log(`Login failed for user: ${data.username}`)
     }
