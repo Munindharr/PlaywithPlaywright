@@ -14,7 +14,6 @@
   "license": "ISC",
   "author": "",
   "type": "commonjs",
-
   "main": "index.js",
   "directories": {
     "test": "tests"
@@ -25,6 +24,7 @@
     "po-test-all": "npm run po-test-chromium && npm run po-test-firefox"
   },
   "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.32.2",
     "abort-controller": "^3.0.0",
     "adm-zip": "^0.6.1",
     "agent-base": "^6.0.2",
